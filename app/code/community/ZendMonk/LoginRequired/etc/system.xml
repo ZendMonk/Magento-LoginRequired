@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<config>
+	<sections>
+   		<web>
+   			<groups>
+   				<customer_login translate="label" module="zendmonk_loginrequired">
+                    <label>Customer Login Required</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>70</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                    	<required translate="label">
+                            <label>Require Customer Login</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                    	</required>
+                        <enable_routes translate="label comment">
+                            <label>Grant visitors access for routes</label>
+                            <comment>Grant visitors access for certain routes/actions (e.g. checkout, catalog_product_view). Use one per line. Per default, customer_account is always enabled. Please note that Varnish Caching will automatically be disabled for all other routes that aren't whitelisted by URL.</comment>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><required>1</required></depends>
+                        </enable_routes>
+                        <enable_urls translate="label comment">
+                            <label>Grant visitors access for URLs</label>
+                            <comment>Grant visitors access for certain URLs (e.g. checkout/cart). Use one per line. Please note that Varnish Caching will automatically be disabled for all other URLs that aren't whitelisted by route.</comment>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><required>1</required></depends>
+                        </enable_urls>
+                        <redirect_to_login_page translate="label comment">
+                            <label>Redirect to default login page</label>
+                            <comment>Redirect visitors to default login page (if not logged in). If you select "No", login will be requested via Pseudo-PopUp when necessary.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><required>1</required></depends>
+                        </redirect_to_login_page>
+                        <popup_title translate="label">
+                            <label>Pseudo-PopUp Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><required>1</required><redirect_to_login_page>0</redirect_to_login_page></depends>
+                        </popup_title>
+                        <popup_info_top translate="label">
+                            <label>Pseudo-PopUp Info Top</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><required>1</required><redirect_to_login_page>0</redirect_to_login_page></depends>
+                        </popup_info_top>
+                        <popup_info_bottom translate="label">
+                            <label>Pseudo-PopUp Info Bottom</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><required>1</required><redirect_to_login_page>0</redirect_to_login_page></depends>
+                        </popup_info_bottom>
+                        <disable_login_page translate="label">
+                        	<label>Disable default login page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><required>1</required><redirect_to_login_page>0</redirect_to_login_page></depends>
+                        </disable_login_page>
+                        <redirect_custom_url translate="label comment">
+                            <label>Custom redirect URL</label>
+                            <comment>If specified, visitors will be redirected to custom URL.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><required>1</required><redirect_to_login_page>0</redirect_to_login_page></depends>
+                        </redirect_custom_url>
+                    </fields>
+                </customer_login>
+   			</groups>
+   		</web>
+	</sections>
+</config>

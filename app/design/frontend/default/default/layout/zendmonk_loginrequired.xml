@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <customer_account_forgotpassword>
+    	<reference name="content">
+    		<action method="unsetChild"><name>forgotPassword</name></action>
+    		<block type="zendmonk_loginrequired/customer_account_forgotpassword" name="forgotPassword" template="zendmonk/loginrequired/customer/form/forgotpassword.phtml" />
+    	</reference>
+    </customer_account_forgotpassword>
+	<request_login_via_pseudo_popup>
+		<reference name="root">
+			<action method="unsetChild"><param>page_messages</param></action>
+		</reference>
+		<reference name="global_notices_dynamic">
+			<action method="setTemplate"><template>zendmonk/loginrequired/page/html/notices/dynamic.phtml</template></action>
+		</reference>
+	</request_login_via_pseudo_popup>
+	<disable_default_login_page>
+        <reference name="top.links">
+        	<action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
+        </reference>
+	</disable_default_login_page>
+</layout>
